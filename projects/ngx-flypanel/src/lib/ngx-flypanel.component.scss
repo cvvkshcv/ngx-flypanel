@@ -1,0 +1,163 @@
+.flypanel {
+    display: flex;
+    flex-direction: column;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+    overflow: hidden;
+    z-index: 200;
+    top:0;
+    &.fixed {
+        transition-property:  top, bottom, right, left;
+        right: -100%;
+        position: fixed;
+        .header {
+            height: 50px;
+            min-height: 47px;
+            font-size: 18px;
+        }
+        &.right {
+            &.fp-close {
+                right: -100%;
+            }
+            &.fp-open {
+                right: 0;
+            }
+        }
+        &.left {
+            &.fp-close {
+                left: -100%;
+            }
+            &.fp-open {
+                left: 0;
+            }
+        }
+
+        &.bottom {
+            left: 0;
+            .header {
+                cursor: row-resize;
+                height: auto;
+                min-height: 35px;
+            }
+            &.fp-close {
+                bottom: -100%;
+            }
+            &.fp-open {
+                bottom: 0;
+            }
+        }
+    }
+    &.relative {
+        position: absolute;
+        transition-property: height, width;
+        left: 0;
+        &.right {
+            right: 0;
+            &.fp-close {
+                width: 0 !important;
+            }
+            &.fp-open {
+                width: 250px;
+            }
+        }
+
+        &.left {
+            left: 0;
+            &.fp-close {
+                width: 0 !important;
+            }
+            &.fp-open {
+                width: 250px;
+            }
+        }
+
+        &.bottom {
+            bottom: 0;
+            .header {
+                cursor: row-resize;
+            }
+            &.fp-close {
+                height: 0 !important;
+            }
+            &.fp-open {
+                height: 300px;
+            }
+        }
+        &.no-animation {
+            transition: unset;
+        }
+    }
+
+    .header {
+        height: 30px;
+        width: 100%;
+        background: #3a3f50;
+        color: #e7e8ea;
+        position: relative;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        padding-left: 12px;
+        .close-button {
+            color: #e7e8ea;
+            position: absolute;
+            font-size: 30px;
+            line-height: 25px;
+            right: 12px;
+            top: 0;
+            cursor: pointer;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            color: #fafafa;
+            font-weight: 100;
+            &:hover {
+                color: #fff;
+                transition: all 0.4s;
+            }
+        }
+        .heading{
+            width: calc( 100% - 25px);
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .dragger {
+            display: none;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            cursor: row-resize;
+        }
+        &:hover .dragger {
+            display: block;
+        }
+    }
+
+    .content {
+        height: 100%;
+        overflow-y: auto;
+        background: #fff;
+    }
+
+    .backdropFixed {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        top: 0;
+        z-index: -1;
+        left: 0;
+    }
+}
+
+.backdropRelative {
+    position: absolute;
+    top: 0 !important;
+    z-index: 99999;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.5);
+    left: 0;
+}

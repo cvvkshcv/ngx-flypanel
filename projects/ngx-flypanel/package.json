@@ -1,0 +1,16 @@
+{
+  "name": "ngx-flypanel",
+  "version": "1.0.0",
+  "description": "ngx-flypanel component is simple and reusable component which can be used throughtout your applicaiton, flypanel has multiple options like open from left,right,bottom and also resize",
+  "author": {
+    "name": "Cv Vikash",
+    "email": "cvvkshcv@gmail.com",
+    "url": "http://github.com/cvvkshcv"
+  },
+  "keywords": ["ngx-flyout","ngx-flypanel","ngx-panel","angular flypanel","slide panel","panel open"],
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^8.1.3",
+    "@angular/core": "^8.1.3"
+  }
+}

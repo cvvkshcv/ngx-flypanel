@@ -1,0 +1,13 @@
+<div class="container">
+  <ngx-flypanel  [width]="320" [open]="boolVal" [placement]="'bottom'" [scrollToTop]="true"
+                [backdrop]="false" [position]="'fixed'" (whenClose)="boolVal = false">
+  <div flypanel-header>
+    <h1>Hello</h1>
+  </div>
+  <div flypanel-content>
+    <h1>Content</h1>
+  </div>
+</ngx-flypanel>
+<button (click)="boolVal = !boolVal">Toggle</button>
+<button (click)="x = !x">Toggle 1</button>
+</div>

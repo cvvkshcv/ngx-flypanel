@@ -1,27 +1,60 @@
 # NgxFlypanel
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+### Installation
+`npm i ngx-flypanel --save`
 
-## Development server
+## Usage 
+```
+<ngx-flypanel [width]="320" [open]="boolVal" [placement]="'left'" [backdropTop]="0" [backdrop]="true" [position]="'fixed'" (whenClose)="boolVal = false">
+    <div flypanel-header>
+      <h1>Hello flypanel heading</h1>
+    </div>
+    <div flypanel-content>
+      <h1>Hello flypanel content</h1>
+    </div>
+  </ngx-flypanel>
+  <button (click)="boolVal = !boolVal">Toggle</button>
+ ```
+ 
+ ```
+<ngx-flypanel [width]="320" [open]="boolVal" [placement]="'right'" [position]="'relative'" (whenClose)="boolVal = false">
+    <div flypanel-header>
+      <h1>Hello flypanel heading</h1>
+    </div>
+    <div flypanel-content>
+      <my-component></my-component>
+    </div>
+  </ngx-flypanel>
+  <button (click)="boolVal = !boolVal">Toggle</button>
+ ```
+### Input properties
+```
+@Input() id: string;
+@Input() open = false; // open or close flypanel
+@Input() headerStyle = {}; // style for #header tag
+@Input() placement: 'left' | 'rigth' | 'bottom' = 'rigth'; // placement of panel
+@Input() height = 300; // height applicable when placement is 'bottom'
+@Input() width = 250; // width applicable when its 'right' or 'left' placement
+@Input() position: 'fixed' | 'relative' = 'fixed'; // position fixed on based on parent
+@Input() top = 0; // top for placement of flypanel
+@Input() backdrop: boolean; // transparent background like bootstrap model
+@Input() backdropTop = 0; // top value for backdrop
+@Input() scrollToTop = false;
+@Input() maxHeight;
+```
+### Output properties
+```
+@Output() whenOpen = new EventEmitter<any>();
+@Output() whenClose = new EventEmitter<any>();
+@Output() whenResize = new EventEmitter<any>();
+@Output() whenScrollToTop = new EventEmitter<any>();
+```
+# Features!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+  - Resizable height, when the placement is in bottom
+  - Backdrop option is available
+  - Easy to manage the styles of your component because ngx-flypanel  is just a wrapper around your content
+  - Flypanel can be overlay or push other content based on position 'fixed' or 'relative' property
+  - id property used to track multiple flypanel in same page
+  - headerStyle is an object which helps to overried header style

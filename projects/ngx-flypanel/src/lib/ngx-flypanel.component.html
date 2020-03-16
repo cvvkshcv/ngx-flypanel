@@ -1,0 +1,12 @@
+<div class="backdropRelative" (click)="closePanel()" *ngIf="backdrop && open && position==='relative'" [ngStyle]="{'top.px' : backdropTop}"></div>
+<div #flypanel class="flypanel {{placement}} {{className}} {{position}}" [ngStyle]="{'max-height': maxHeight,'width': (placement === 'bottom') ? '100%' : width+'px' ,'top': (placement === 'bottom') ? 'unset' : top+'px', height : (placement === 'bottom') ? height+'px' : 'calc(100% - '+ top +'px)'}">
+    <div class="backdropFixed" (click)="closePanel()" *ngIf="backdrop && open && position==='fixed'" [ngStyle]="{'top.px' : backdropTop}"></div>
+    <div class="header" [ngStyle]="headerStyle" (mousedown)="startResize($event)" >
+        <span class="heading"><ng-content select="[flypanel-header]"></ng-content></span>
+        <span class="close-button" (click)="closePanel()">&times;</span>
+        <span *ngIf="placement === 'bottom'" class="dragger"></span>
+    </div>
+    <div class="content custom-scroll">
+        <ng-content select="[flypanel-content]"></ng-content>
+    </div>
+</div>

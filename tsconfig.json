@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-flypanel": [
+        "dist/ngx-flypanel"
+      ],
+      "ngx-flypanel/*": [
+        "dist/ngx-flypanel/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
