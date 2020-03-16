@@ -1,5 +1,5 @@
 # NgxFlypanel
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/cvvkshcv/)
 
 ### Installation
 `npm i ngx-flypanel --save`
