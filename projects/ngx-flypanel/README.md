@@ -4,6 +4,22 @@
 ### Installation
 `npm i ngx-flypanel --save`
 
+#### Then add NgxFlypanelModule into imports of your module
+##### ex: app.module.ts
+
+```
+import { NgxFlypanelModule } from  'ngx-flypanel';
+  
+imports: [
+	BrowserModule,
+	NgxFlypanelModule <----
+],
+```
+
+### For issues
+> Raise issues [here](https://github.com/cvvkshcv/ngx-flypanel/issues).
+
+https://github.com/cvvkshcv/ngx-flypanel/issues
 ## Usage 
 ```
 <ngx-flypanel [width]="320" [open]="boolVal" [placement]="'left'" [backdropTop]="0" [backdrop]="true" [position]="'fixed'" (whenClose)="boolVal = false">
