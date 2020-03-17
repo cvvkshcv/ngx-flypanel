@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngx-flypanel-test';
-  boolVal: boolean = false;
+  panels = {
+    bottom: false,
+    right: false
+  };
 }

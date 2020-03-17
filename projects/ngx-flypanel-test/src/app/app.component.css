@@ -2,3 +2,6 @@
     height: 100vh;
     background-color: #ccc;
 }
+::ng-deep body {
+    margin: 0;
+}

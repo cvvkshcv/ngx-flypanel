@@ -1,13 +1,31 @@
 <div class="container">
-  <ngx-flypanel  [width]="320" [open]="boolVal" [placement]="'bottom'" [scrollToTop]="true"
-                [backdrop]="false" [position]="'fixed'" (whenClose)="boolVal = false">
-  <div flypanel-header>
-    <h1>Hello</h1>
-  </div>
-  <div flypanel-content>
-    <h1>Content</h1>
-  </div>
-</ngx-flypanel>
-<button (click)="boolVal = !boolVal">Toggle</button>
-<button (click)="x = !x">Toggle 1</button>
+
+  <ngx-flypanel [open]="panels.bottom" [placement]="'bottom'" [scrollToTop]="true"
+                [backdrop]="false" [position]="'fixed'" (whenClose)="panels.bottom = false">
+    <div flypanel-header>
+      <p>Hello <span class="custom-class">my custom class</span></p>
+    </div>
+    <div flypanel-content>
+      <h1>Bottom panel and its resizable</h1>
+    </div>
+  </ngx-flypanel>
+
+
+  <ngx-flypanel [width]="620" [open]="panels.right" [placement]="'right'" [scrollToTop]="true"
+                [backdrop]="true" [position]="'fixed'" (whenClose)="panels.right = false">
+    <div flypanel-header>
+      <p>
+        Heading <i>With custom html tag</i>
+      </p>
+    </div>
+    <div flypanel-content>
+      <h1>Right side panel</h1>
+      <h1>Right side panel</h1>
+      <h1>Right side panel</h1>
+      <h1>Right side panel</h1>
+    </div>
+  </ngx-flypanel>
+
+<button (click)="panels.bottom = !panels.bottom">Toggle bottom panel</button>
+<button (click)="panels.right = !panels.right">Toggle right panel</button>
 </div>

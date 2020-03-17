@@ -19,18 +19,23 @@ imports: [
 ### For issues
 > Raise issues [here](https://github.com/cvvkshcv/ngx-flypanel/issues).
 
-https://github.com/cvvkshcv/ngx-flypanel/issues
 ## Usage 
 ```
-<ngx-flypanel [width]="320" [open]="boolVal" [placement]="'left'" [backdropTop]="0" [backdrop]="true" [position]="'fixed'" (whenClose)="boolVal = false">
+<ngx-flypanel [width]="620" [open]="panels.right" [placement]="'right'" [scrollToTop]="true"
+                [backdrop]="true" [position]="'fixed'" (whenClose)="panels.right = false">
     <div flypanel-header>
-      <h1>Hello flypanel heading</h1>
+      <p>
+        Heading <i>With custom html tag</i>
+      </p>
     </div>
     <div flypanel-content>
-      <h1>Hello flypanel content</h1>
+      <h1>Right side panel</h1>
+      <h1>Right side panel</h1>
+      <h1>Right side panel</h1>
+      <h1>Right side panel</h1>
     </div>
   </ngx-flypanel>
-  <button (click)="boolVal = !boolVal">Toggle</button>
+  <button (click)="panels.right = !panels.right">Toggle</button>
  ```
  
  ```
