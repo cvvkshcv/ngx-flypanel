@@ -1,4 +1,7 @@
 # NgxFlypanel
+
+![ngx-flypanel](https://user-images.githubusercontent.com/12455634/76822913-7d6d6500-6838-11ea-9a11-2f965eca9dd6.gif)
+
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/cvvkshcv/)
 
 ### Installation
